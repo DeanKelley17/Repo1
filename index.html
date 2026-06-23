@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <button onclick="runApp()">Scan Market</button>
+    <div id="output"></div>
+
+    <script>
+        async function runApp() {
+            // Simply call your own API endpoint
+            const response = await fetch('/api/proxy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    "exchange": {
+                        "status": {"option": "online"},
+                        "have": ["chaos"],
+                        "want": ["divine"]
+                    }
+                })
+            });
+
+            const data = await response.json();
+            console.log("Data from Vercel:", data);
+            document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
