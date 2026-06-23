@@ -1,6 +1,6 @@
 // api/proxy.js
 export default async function handler(req, res) {
-    const LEAGUE = "Return of the Ancients";
+    const LEAGUE = "Runes Of Aldur";
     const GGG_URL = `https://api.pathofexile.com/trade/exchange/${encodeURIComponent(LEAGUE)}`;
 
     try {
